@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        black12: '#121212',
+                        black18: '#181818',
+                        black21: '#212121',
+                        black32: '#323232',
+                        black38: '#383838',
+                        black47: '#474747',
+                        blue3d: '#3da6ff',
+                        lightGray: '#aaa',
+                    },
+                    backgroundImage: {
+                        'menu': "url('/img/hambarger.svg')",
+                        'home': "url('/img/home.svg')",
+                        'explore': "url('/img/explore.svg')",
+                        'shorts': "url('/img/shorts.svg')",
+                        'subscription': "url('/img/subscription.svg')",
+                        'library': "url('/img/library.svg')",
+                        'history': "url('/img/history.svg')",
+                        'your_video': "url('/img/your_video.svg')",
+                        'watch_later': "url('/img/watch_later.svg')",
+                        'liked': "url('/img/liked.svg')",
+                        'down_arrow': "url('/img/down_arrow.svg')",
+                        'voice_search': "url('/img/voice-search.svg')",
+                        'create': "url('/img/create.svg')",
+                        'more': "url('/img/more.svg')",
+                        'ring': "url('/img/ring.svg')",
+                    }
+                },
+                fontFamily: {
+                    'Roboto': ["Roboto", "sans-serif"]
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="font-Roboto text-white flex overflow-hidden">
+    <input type="checkbox" name="" id="check" class="peer hidden"> 
+    <div class="flex items-center px-[20px] py-[16px] absolute peer-checked:flex">
+        <label for="check" class="cursor-pointer">
+            <div class="bg-menu size-[22px] bg-contain mr-[18px]"></div>
+        </label>
+        <a href="">
+            <img src="img/logo.svg" class="" alt="logo" />
+        </a>
+    </div>
+    <aside class="bg-black21 w-[220px] h-screen pr-[20px] overflow-auto shrink-0 peer-checked:hidden">
+        <div class="flex items-center px-[20px] py-[16px]">
+            <label for="check" class="cursor-pointer">
+                <div class="bg-menu size-[22px] bg-contain mr-[18px]"></div>
+            </label>
+            <a href="">
+                <img src="img/logo.svg" class="" alt="logo" />
+            </a>
+        </div>
+        <div>
+            <a href="" class="px-[20px] py-[5px] bg-black38 w-full flex items-center hover:bg-black38">
+                <div class="bg-home size-[22px] bg-contain mr-[20px]"></div>
+                <span class="text-[12px] font-semibold">Home</span>
+            </a>
+            <a href="" class="px-[20px] py-[5px] w-full flex items-center hover:bg-black38">
+                <div class="bg-explore size-[22px] bg-contain mr-[20px]"></div>
+                <span class="text-[12px]">Explores</span>
+            </a>
+            <a href="" class="px-[20px] py-[5px] w-full flex items-center hover:bg-black38">
+                <div class="bg-shorts size-[22px] bg-contain mr-[20px]"></div>
+                <span class="text-[12px]">Shorts</span>
+            </a>
+            <a href="" class="px-[20px] py-[5px] w-full flex items-center hover:bg-black38">
+                <div class="bg-subscription size-[22px] bg-contain mr-[20px]"></div>
+                <span class="text-[12px]">Subscriptions</span>
+            </a>
+        </div>
+
+        <hr class="my-[16px] border-black38">
+
+        <div>
+            <a href="" class="px-[20px] py-[5px] w-full flex items-center hover:bg-black38">
+                <div class="bg-library size-[22px] bg-contain mr-[20px]"></div>
+                <span class="text-[12px]">Library</span>
+            </a>
+            <a href="" class="px-[20px] py-[5px] w-full flex items-center hover:bg-black38">
+                <div class="bg-history size-[22px] bg-contain mr-[20px]"></div>
+                <span class="text-[12px]">History</span>
+            </a>
+            <a href="" class="px-[20px] py-[5px] w-full flex items-center hover:bg-black38">
+                <div class="bg-your_video size-[22px] bg-contain mr-[20px]"></div>
+                <span class="text-[12px]">Your videos</span>
+            </a>
+            <a href="" class="px-[20px] py-[5px] w-full flex items-center hover:bg-black38">
+                <div class="bg-watch_later size-[22px] bg-contain mr-[20px]"></div>
+                <span class="text-[12px]">Watchlater</span>
+            </a>
+            <a href="" class="px-[20px] py-[5px] w-full flex items-center hover:bg-black38">
+                <div class="bg-liked size-[22px] bg-contain mr-[20px]"></div>
+                <span class="text-[12px]">Liked videos</span>
+            </a>
+            <a href="" class="px-[20px] py-[5px] w-full flex items-center hover:bg-black38">
+                <div class="bg-down_arrow size-[22px] bg-contain mr-[20px]"></div>
+                <span class="text-[12px]">Show more</span>
+            </a>
+        </div>
+
+        <hr class="my-[16px] border-black38">
+
+        <div class="pl-[20px]">
+            <h3 class="text-[13px] font-semibold text-lightGray uppercase mb-[8px]">subscription</h3>
+            <a href="" class="mb-[5px] py-[5px] w-full flex items-center justify-between ">
+                <div class="flex items-center ">
+                    <div class="size-[22px] mr-[20px] rounded-full overflow-hidden">
+                        <img class="object-cover" src="img/1.webp" alt="">
+                    </div>
+                    <span class="text-[12px] text-ellipsis whitespace-nowrap overflow-hidden w-[110px]">Nadir On The Go</span>
+                </div>
+                <span class="bg-blue3d size-[4px] rounded-full mr-[14px]"></span>
+            </a>
+            <a href="" class="mb-[5px] py-[5px] w-full flex items-center justify-between ">
+                <div class="flex items-center ">
+                    <div class="size-[22px] mr-[20px] rounded-full overflow-hidden">
+                        <img class="object-cover" src="img/1.webp" alt="">
+                    </div>
+                    <span class="text-[12px] text-ellipsis whitespace-nowrap overflow-hidden w-[110px]">Coke Studio Bangla</span>
+                </div>
+                <span class="bg-blue3d size-[4px] rounded-full mr-[14px]"></span>
+            </a>
+            <a href="" class="mb-[5px] py-[5px] w-full flex items-center justify-between ">
+                <div class="flex items-center ">
+                    <div class="size-[22px] mr-[20px] rounded-full overflow-hidden">
+                        <img class="object-cover" src="img/1.webp" alt="">
+                    </div>
+                    <span class="text-[12px] text-ellipsis whitespace-nowrap overflow-hidden w-[110px]">MKBHD</span>
+                </div>
+                <span class="bg-blue3d size-[4px] rounded-full mr-[14px]"></span>
+            </a>
+            <a href="" class="mb-[5px] py-[5px] w-full flex items-center justify-between ">
+                <div class="flex items-center ">
+                    <div class="size-[22px] mr-[20px] rounded-full overflow-hidden">
+                        <img class="object-cover" src="img/1.webp" alt="">
+                    </div>
+                    <span class="text-[12px] text-ellipsis whitespace-nowrap overflow-hidden w-[110px]">Figma</span>
+                </div>
+                <span class="bg-blue3d size-[4px] rounded-full mr-[14px]"></span>
+            </a>
+            <a href="" class="mb-[5px] py-[5px] w-full flex items-center justify-between ">
+                <div class="flex items-center ">
+                    <div class="size-[22px] mr-[20px] rounded-full overflow-hidden">
+                        <img class="object-cover" src="img/1.webp" alt="">
+                    </div>
+                    <span class="text-[12px] text-ellipsis whitespace-nowrap overflow-hidden w-[110px]">ATC Android ToTo Android ToTo </span>
+                </div>
+                <span class="bg-blue3d size-[4px] rounded-full mr-[14px]"></span>
+            </a>
+            <a href="" class="mb-[5px] py-[5px] w-full flex items-center justify-between ">
+                <div class="flex items-center ">
+                    <div class="size-[22px] mr-[20px] rounded-full overflow-hidden">
+                        <img class="object-cover" src="img/1.webp" alt="">
+                    </div>
+                    <span class="text-[12px] text-ellipsis whitespace-nowrap overflow-hidden w-[110px]">Alux.com</span>
+                </div>
+                <span class="bg-blue3d size-[4px] rounded-full mr-[14px]"></span>
+            </a>
+            <a href="" class="mb-[5px] py-[5px] w-full flex items-center justify-between ">
+                <div class="flex items-center ">
+                    <div class="size-[22px] mr-[20px] rounded-full overflow-hidden">
+                        <img class="object-cover" src="img/1.webp" alt="">
+                    </div>
+                    <span class="text-[12px] text-ellipsis whitespace-nowrap overflow-hidden w-[110px]">Satish K Videos</span>
+                </div>
+                <span class="bg-blue3d size-[4px] rounded-full mr-[14px]"></span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="bg-black18  h-screen py-[7px] px-[10px] flex-1">
+        <div class="flex items-center justify-around ml-[200px]">
+            <div class="flex items-center justify-center">
+                <div class="w-[578px] h-[36px] flex items-center cursor-pointer	">
+                    <input type="text"
+                        class="h-full border border-black32 py[10px] px-[6px] outline-none flex-1 placeholder:text-lightGray placeholder:text-[14px] bg-transparent"
+                        placeholder="Search">
+                    <div class="w-[56px] h-full bg-black32 inline-flex justify-center items-center">
+                        <i class="fa-solid fa-magnifying-glass text-white "></i>
+                    </div>
+                </div>
+                <div class="bg-voice_search size-[22px] bg-contain ml-[14px] cursor-pointer	"></div>
+            </div>
+            <div class="flex items-center">
+                <a href="#">
+                    <div class="bg-create size-[22px] bg-contain"></div>
+                </a>
+                <a href="#" class="ml-[20px]">
+                    <div class="bg-more size-[22px] bg-contain"></div>
+                </a>
+                <a href="#" class="ml-[20px]">
+                    <div class="bg-ring size-[22px] bg-contain"></div>
+                </a>
+                <a href="#">
+                    <img src="img/1.webp" class="size-[28px] ml-[24px] rounded-full" alt="">
+                </a>
+            </div>
+        </div>
+
+        <hr class="mt-[7px] border-black38">
+
+        <div class="my-[10px] mx-[15px] flex items-center  w-[calc(100vw_-_260px)] overflow-hidden hover:overflow-auto ">
+            <div href="#" class="bg-white rounded-[25px] py-[8px] px-[12px] flex-1" >
+                <span class="text-[12px] text-black text-nowrap	">All</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Cook Studio</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">UX</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Case Study</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Music</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Bnagla Lofi</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Tour</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Saintmartin</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Tech</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">iPhone 13</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Cook Studio</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">UX</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Case Study</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Music</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Bnagla Lofi</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Tour</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Saintmartin</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Tech</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">iPhone 13</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Music</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Bnagla Lofi</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Tour</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Saintmartin</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Tech</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">iPhone 13</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Music</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Bnagla Lofi</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Tour</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Saintmartin</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">Tech</span>
+            </div>
+            <div href="#" class="bg-black38 rounded-[25px] py-[8px] px-[12px] ml-[12px] flex-1" >
+                <span class="text-[12px] text-white text-nowrap	">iPhone 13</span>
+            </div>
+
+        </div>
+
+        <hr class="mt-[10px] border-black38">
+
+        <div class="grid grid-cols-4 auto-rows-auto	 gap-x-[14px] gap-y-[35px] mt-[20px] ml-[15px] h-[calc(100vh_-_120px)] overflow-y-auto peer-checked:grid-cols-5">
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-1.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-1.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-1.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-1.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-1.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-1.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-1.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-1.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-1.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-1.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="h-[170px] overflow-hidden mb-[10px]">
+                    <img src="img/thumbnail-2.jpg" class="object-cover" alt="">
+                </div>
+                <div class="flex ">
+                    <div class="size-[32px] overflow-hidden rounded-full mr-[10px] shrink-0">
+                        <img src="img/1.webp" alt="" class="object-cover">
+                    </div>
+                    <div>
+                        <h3 class="mb-[7px] text-semi">Bulbuli | Coke Studio Bangla |
+                            Season One | Ritu Raj X Nandita</h3>
+                        <p class="text-[12px] text-lightGray">Coke Studio Bangla <i class="fa-solid fa-circle-check"></i></p>
+                        <p class="text-[12px] text-lightGray flex items-center">1.5 M views <span class="size-[3px] rounded-full mx-[4px] block bg-lightGray"></span> 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+</body>
+
+</html>
